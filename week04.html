@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Undo cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body class="bg-slate-100" >
+    <header class="shadow fixed top-0 w-full z-50 h-16 bg-amber-950 flex items-center  font-bold justify-between">
+        <h1 class="text-white pl-4">Undo Cafe</h1>
+        <nav class="flex gap-4 text-white text-sm font-bold pr-4">
+                <a href="#menu" class="hover:text-white hover:underline">メニュー</a>
+                <a href="#gentei" class="hover:text-white hover:underline">期間限定商品</a>
+
+        </nav>
+        
+    </header>
+
+    
+    <main>
+    
+        <section class="relative h-full">
+        
+            <div class="h-96 bg-cover bg-center w-full" style="background-image: url('misudo.png');"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 id="menu" class="text-white text-5xl font-bold">Undo cafe</h1>
+            </div>
+        
+        </section>
+
+        <div class="bg-orange-50 pb-8 pt-16 flex flex-col items-center">
+            <h2 class="text-xl font-bold">メニュー</h2>
+        </div>
+
+        <section class="grid grid-cols-2 md:grid-cols-4 bg-orange-50 pt-8 pb-40">
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6 " >
+            <img src="oldfashion.png" alt="オールドファッション">
+            <h2>チョコファッション</h2>
+            <h4>183円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="mafinn.png" alt="マフィン">
+            <h2>しっとりマフィン</h2>
+            <h4>217円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="golden.png" alt="ゴールデンチョコレート">
+            <h2>ゴールデンチョコレート</h2>
+            <h4>183円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="ponde.png" alt="ポンデリング">
+            <h2 id="gentei">ポンデリング</h2>
+            <h4>178円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="kinako.png" alt="きなこ">
+            <h2>もっちゅりん</h2>
+            <h3>きなこ</h3>
+            <h4>216円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="mitarasi.png" alt="みたらし">
+            <h2>もっちゅりん</h2>
+            <h3>みたらし</h3>
+            <h4>226円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="itigo.png" alt="みたらし">
+            <h2>もっちゅりん</h2>
+            <h3>いちご</h3>
+            <h4>237円</h4>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6 min-h-[280px] flex flex-col items-center text-center hover:shadow-lg hover:scale-105 transition m-6" >
+            <img src="pasta.png" alt="パスタ">
+            <h2>かぼす香る鶏みぞれ涼風麺</h2>
+            <h4>682円</h4>
+            </div>
+
+    </section>
+
+    </main>
+
+    <footer class="bg-amber-950  w-full shadow  border-t bottom-0 left-0 py-20">
+        <div class="flex flex-col gap-4">
+            <div class="">
+                <nav class="flex gap-6 justify-center">
+                    <a href="" class="text-white text-sm hover:text-white hover:underline text-center">twitter/x</a>
+                    <a href="" class="text-white text-sm hover:text-white hover:underline text-center">instagram</a>
+                    <a href="" class="text-white text-sm hover:text-white hover:underline text-center">メール</a>
+                </nav>
+                <p class="text-white text-sm text-center mt-4">Ⓒ2026 Undo cafe</p>
+            </div>
+        </div>
+    </footer> 
+
+</body>
+</html>
