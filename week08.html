@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- １．スクリプトタグ足す -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="mx-auto max-w-3xl">
+    <h1 class="text-2xl font-bold text-slate-900">メンバー一覧</h1>
+    <!-- 2. JSを入れる箱 -->
+    <div id="equipmentBody" class="mt-8 space-y-4"></div>
+
+    </div>
+    
+
+    <script>
+        //３．データを入れる
+        const items = [
+        { name: "サザエさん", old: 24, comment: "私が主人公です" },
+        { name: "かつおくん", old: 11, comment: "姉は日曜日になると髪型のセットに２時間かかります" },
+        { name: "わかめちゃん", old: 9, comment: "お兄ちゃんは実はちゃんと毎回宿題出してます" },
+        { name: "たらちゃん", old: 3, comment: "実は僕もっとちゃんと話せます" },
+        { name: "ますおさん", old: 28, comment: "まじでサザエのこと愛してます" },
+        ];
+        //４．こうゆう種類のデータ来ましたよ
+        const equipmentBody = document.getElementById("equipmentBody");
+        //５．反映する
+        items.forEach((item) => {
+        //６．箱の中にこうゆうの作ってほしい
+            const card = document.createElement("div");
+            card.className = "bg-white p-4 rounded shadow";
+
+            card.innerHTML = `
+            <h2 class="text-lg font-bold text-slate-900">${item.name}</h2>
+            <p class="mt-2 text-sm text-slate-500">年齢：${item.old}歳</p>
+            <p class="mt-4 text-sm leading-6 text-slate-700">${item.comment}</p>
+        `;
+
+        // ７. 作成した ６ を２に追加
+        equipmentBody.appendChild(card);
+        
+        });
+    
+
+    </script>
+</body>
+</html>
