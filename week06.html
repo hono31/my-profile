@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI計算アプリ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <h1>BMI計算</h1>
+
+    <div>
+        <label for="height">身長</label>
+        <input id="height" type="number">
+    </div>
+
+    <div>
+        <label for="weight">体重</label>
+        <input id="weight" type="number">
+    </div>
+
+    <button id="calcbtn">計算する</button>
+
+    <p id="result"></p>
+
+
+
+    <script>
+            function calcBmi(height, weight) {
+                const heightM = height / 100;
+                return weight / (heightM * heightM);
+            }
+
+            function getJudgment(bmi) {
+                if (bmi < 18.5) {
+                return "痩せ型";
+                } else if (bmi < 25) {
+                return "普通";
+                } else {
+                return "肥満";
+                }
+            }
+
+            const button = document.querySelector("#calcbtn");
+            const result = document.querySelector("#result");
+
+            button.addEventListener("click", () => {
+                const height = Number(document.querySelector("#height").value);
+                const weight = Number(document.querySelector("#weight").value);
+
+                if (height <= 0 || weight <= 0) {
+                result.textContent = "身長と体重を入力してください";
+                return;
+                }
+
+                const bmi = calcBmi(height, weight);
+                const judgment = getJudgment(bmi);
+
+                result.textContent = "BMI: " + bmi.toFixed(1) + "（" + judgment + "）";
+            });
+            </script>
+</body>
+
+</html>

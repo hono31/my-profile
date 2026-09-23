@@ -1,0 +1,106 @@
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week09 POSSE課題</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="min-h-screen bg-slate-50 flex items-center justify-center p-8">
+
+    <div class="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h1 class="text-xl font-bold text-slate-900">ログイン</h1>
+        <p class="mt-1 mb-6 text-sm text-slate-500">…</p>
+
+    <!-- 入力欄とログインボタンをひとつのフォームにまとめています。 -->
+
+        <form id="loginForm" class="space-y-4">
+        <input
+            type="text"
+            id="username"
+            class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="名前"
+        >
+
+        <p id="usernameError" class="text-xs text-red-500 mt-1"></p>
+
+
+        <input
+            type="email"
+            id="email"
+            class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="メールアドレス"
+        >
+
+        <p id="emailError" class="text-xs text-red-500 mt-1"></p>
+
+
+        <input
+            type="password"
+            id="password"
+            class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="パスワード"
+        >
+
+        <p id="passwardError" class="text-xs text-red-500 mt-1"></p>
+
+
+        <input
+            type="checkbox"
+            id="checkbox"
+            class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="利用規約"
+        >
+
+        <p id="checkboxError" class="text-xs text-red-500 mt-1"></p>
+
+        <!-- これらがまとめてform -->
+
+        <p id="result" class="text-sm font-medium"></p>
+
+        <button
+            type="submit"
+            class="w-full rounded bg-blue-600 py-2 font-bold text-white hover:bg-blue-700"
+        >
+            ログイン
+        </button>
+        </form>
+    </div>
+
+    <script>
+        //Formが上のこんなところにあるのよ
+        const form = document.getElementById("loginForm");
+        const result = document.getElementById("result");
+        //submitのところを押されたら動くよ。ページの再読み込みを止める役
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const checkbox = document.getElementById("checkbox").checked;
+
+            if (username === "" || password === "" || email === "") {
+                result.textContent = "すべて入力してください";
+                result.className = "text-sm font-medium text-red-500";
+                return;
+            }
+
+            if (!checkbox) {
+                checkboxError.textContent = "利用規約に同意してください";
+                checkboxError.className = "text-sm font-medium text-red-500";
+                return;
+            }
+
+            if (password.length < 8) {
+                passwardError.textContent = "パスワードは8文字以上で入力してください";
+                passwardError.className = "text-sm font-medium text-red-500";
+                return;
+            }
+
+            result.textContent = "ログイン成功！";
+            result.className = "text-sm font-medium text-green-600";
+        });
+    </script>
+    </body>
+    </html>

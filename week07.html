@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <h1>ToDoリスト</h1>
+
+    <label for="">やることリスト</label>
+    <input type="text" name="" id="#li">
+
+    <button id="add">追加</button>
+
+
+
+
+    <script>
+    // 1. 入力値を取得する
+    const addBtn = document.querySelector(#add).value;
+    const text = document.querySelector("#li").value;
+
+    // 2. li要素を新たに作る（まだページには表示されていない）
+    const item = document.createElement("li");
+
+    addBtn.addEventListener("click",() = > {console.console.log("addlist");
+    })
+
+    // 3. li要素の文字を設定する
+    item.textContent = text;
+
+    // 4. li要素にクラスを付ける
+    item.className = "p-2 bg-white rounded";
+
+    // 5. ul要素（リストの親）を取得する
+    const list = document.querySelector("#todoList");
+
+    // 6. ul要素の子としてli要素を追加する（ここでページに表示される）
+    list.appendChild(item);
+
+
+
+
+    </script>
+</body>
+</html>
