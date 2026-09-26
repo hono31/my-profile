@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div>
+        <h1>ログイン</h1>
+        <form id="form">
+            <div>
+                <label for="name">お名前</label>
+                <input 
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="山田太郎"
+                >
+            </div>
+
+            <div>
+                <label for="email">メールアドレス</label>
+                <input 
+                    type="text"
+                    id="email"
+                    required
+                    placeholder="example@email.com"
+                >
+            </div>
+
+            <div>
+                <label for="passward">パスワード（8文字以上）</label>
+                <input 
+                    type="text"
+                    id="passward"
+                    required
+                    minlength="8"
+                >
+            </div>
+
+            <div>
+                <label for="agree">利用規約に同意する</label>
+                <input 
+                    type="checkbox"
+                    id="agree"
+                    required>
+            </div>
+
+            <p id="result"></p>
+
+            <button type="submit">ログインする</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("form");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;  // パスワードは空白も意味を持つのでtrimしない
+            const agree = document.getElementById("agree").checked;
+
+            if (name === "") {
+                result.textContent = "お名前を入力してください";
+                return;
+            }
+
+            if (email === "") {
+                result.textContent = "メールアドレスを入力してください";
+                return;
+            }
+
+            if (password.length < 8 )  {
+                result.textContent = "パスワードは８文字以上で入力してください";
+                return;
+            }
+
+            if (!agree)  {
+                result.textContent = "利用規約に同意してください";
+                return;
+            }
+
+            message.textContent = "登録完了！ようこそ、" + name + " さん！";
+        });
+    </script>
+</body>
+</html>
